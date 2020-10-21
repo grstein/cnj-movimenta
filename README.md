@@ -17,6 +17,11 @@ O Movimenta Analytics foi pensado de forma que ele possa ser facilmente integrad
 
 O Dash é uma biblioteca versátil que possibilita a criação de diversos tipos de Dashboards. Nossa equipe optou por utilizar uma interface que se parece com um relatório real, semelhante a um PDF ou mesmo um documento impresso, pensando nas personas indicadas no desafio. Esperamos que as pessoas com menor habilidade em operar o computador não se sintam intimidados por uma interface complexa. Utilizamos as técnicas de Design Thinking e Storytelling buscando inserir os elementos de texto, filtros e as informações dinâmicas de forma gradual dentre as diferentes páginas da aplicação, tomando o cuidado em manter um contexto em cada uma e não sobrecarregar a tela.
 
+A Figura abaixo ilustra o processo realizado para o desenvolvimento do Movimenta Analytics. Os arquivos JSON fornecidos pelo CNJ foram processados e transformados, utilizando Python, para datasets tabulares em níveis agregados. Esses datasets foram consumidos para a geração dos gráficos em Plotly/Dash no relatório analítico do Movimenta Analytics.
+
+![alt text](https://github.com/grstein/cnj-movimenta/blob/master/app/assets/arquitetura-alto-nivel.png?raw=true)
+
+
 ## Aonde este relatório pode ser aplicado
 
 Embora nossa equipe tenha focado no assunto código 1116 de Execução Fiscal, que representa o maior volume de processos em praticamente todos os Tribunais Estaduais, a Metodologia de análise do Tempo Médio entre os pares de Movimentação pode ser aplicada em qualquer Classe/Assunto de processo. Para ilustrar esta possibilidade, o relatório apresenta na primeira página um filtro do tipo `Radio Button` para seleção de qual Justiça o usuário pretende analisar. Neste demo este filtro estará travado em Justiça Estadual apenas por estarmos trabalhando com uma base de dados pré-processada.
