@@ -35,11 +35,22 @@ O Relatório de Movimentação Processual está subdividido em 5 páginas no men
 Esta é a página inicial da aplicação em que é apresentado ao usuário o que é o Datajud e de onde vêm as informações dele. Em seguida o usuário já é apresentado a um pequeno filtro, para que ele selecione os dados de qual Justiça serão apresentados no decorrer do relatório. Abaixo deste filtro serão apresentadas KPIs e informações gerais, que apresentem a dimensão e volume de processos entre os órgãos
 
 ### Metodologia
+- Apresenta a explicação sobre as métricas utilizadas, bem como elas foram extraídas para facilitar o entendimento do relatório.
+
 ### Visão Geral
+- Apresenta dados gerais sobre um Tribunal específico. Dois gráficos, que consideramos relevantes, são apresentados: um que mostra o quantitativo de processos ao longo do tempo e outro que mostra o quantitativo de movimentações ao longo do tempo. Outras métricas gerais podem ser adicionadas, tais como: quantitativo de processos em aberto; quantitativo de processos em trânsito julgado; quantidade de órgãos judiciais, do tribunal.
+
 ### Unidade de Origem
+- Permite verificar indicadores em nível de órgão, filtrando por classes processuais e os assuntos dos processos. A ideia é apresentar métricas também sobre as movimentações vinculadas à esses filtros. Essa tela não foi finalizada.
+
 ### Movimentações 
+- Permite analisar em um maior nível de detalhe as transições das movimentações judiciais. O filtro foi criado para que o usuário explore os dados de seu órgão ou de outros orgãos, com o objetivo principal de identificar padrões de comportamento dessas movimentações. O usuário então escolhe o órgão judicial, e poderá verificar as transições dos movimentos mais recorrentes, e aquelas que levam mais tempo, que podem ajudar a identificar gargalos. O usuário ainda poderá filtrar pelas descrições desses movimentos, selecionando a origem e o movimento subsequente de uma transição.
+
 ### Comparar
+- Permite comparar métricas e indicadores de movimentações de dois órgãos judiciais específicos. A comparação entre órgãos permite que os gestores públicos aloquem mais recursos naquelas transições mais importantes e/ou recorrentes, e identifiquem possíveis gargalos em algumas transições específicas. Essa tela não foi finalizada.
+
 ### Destaques
+- Permite visualizar informações adicionais, noticias e informes sobre atualizações realizadas no relatório.
 
 ## Rodando o app localmente
 
