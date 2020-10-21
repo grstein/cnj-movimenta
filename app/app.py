@@ -27,7 +27,7 @@ ASSETS_PATH = PATH.joinpath("./assets").resolve()
 ### lendo DataFrame pré-processado
 df_dados = pd.read_csv(DATA_PATH.joinpath("pares.csv"))
 df_dados = df_dados.dropna()
-df_dados.columns = ['Transição','Tribunal','codOrgao','Quantidade','Tempo mínimo','Tempo máximo','Tempo médio','C1','C2','Movimento 1', 'Movimento Subsequente']
+df_dados.columns = ['Transição','Tribunal','codOrgao','FTM','Tempo mínimo','Tempo máximo','TMT','C1','C2','Movimento 1', 'Movimento Subsequente']
 
 app = dash.Dash(
     __name__, meta_tags=[{"name": "viewport", "content": "width=device-width"}],suppress_callback_exceptions=True
@@ -54,8 +54,8 @@ def update_output_div(fselect,ffrom,fto):
         filtered_df = filtered_df[filtered_df['Movimento Subsequente'] == fto]
     print(ffrom)
     plt.figure(figsize=(200,200))
-    df_pivot = filtered_df.pivot('C1','C2','Tempo médio')   
-    return generate_table(filtered_df[['Movimento 1', 'Movimento Subsequente','Quantidade','Tempo mínimo','Tempo máximo','Tempo médio']].sort_values('Quantidade',ascending=False))
+    df_pivot = filtered_df.pivot('C1','C2','TMT')   
+    return generate_table(filtered_df[['Movimento 1', 'Movimento Subsequente','FTM','Tempo mínimo','Tempo máximo','TMT']].sort_values('FTM',ascending=False))
 
 # Callback que cria a arvore de quadros
 @app.callback(
@@ -64,8 +64,8 @@ def update_output_div(fselect,ffrom,fto):
 )
 def update_output_div(input_value):
     filtered_df = df_dados[df_dados['codOrgao'] == int(input_value)]
-    #fig = px.scatter(filtered_df, x="Quantidade", y="Tempo médio", hover_name="Transição")
-    fig = px.treemap(filtered_df, path=['Movimento 1','Movimento Subsequente'], values='Quantidade')
+    #fig = px.scatter(filtered_df, x="FTM", y="TMT", hover_name="Transição")
+    fig = px.treemap(filtered_df, path=['Movimento 1','Movimento Subsequente'], values='FTM')
     return fig
 
 # Atualizar página

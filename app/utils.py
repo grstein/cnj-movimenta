@@ -56,7 +56,7 @@ def get_menu():
                 className="tab first",
             ),
             dcc.Link(
-                "Minha Vara",
+                "Unidade de Origem",
                 href="/movimenta/minha-vara",
                 className="tab",
             ),

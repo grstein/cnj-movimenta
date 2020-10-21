@@ -1,4 +1,11 @@
-# Movimenta Analytics
+# Entregas:
+
+- [Demo Live](http://192.34.57.12/movimenta/overview)
+- [Video]()
+-
+
+
+## Movimenta Analytics
 
 Esta aplicação foi criada utilizando o framework interarivo do Python [Dash](https://plot.ly/products/dash/) desenvolvido pelo [Plotly](https://plot.ly/). Todas estas tecnologias são open-source e possibilitam o uso de bibliotecas que são o estado da arte na Ciência de Dados. O Dash abstrai toda a tecnologia e protocolos necessários para criar aplicações Web interativas e é uma forma simples e efetiva de apresentar as informações obtidas por meio do processamento com as bibliotecas do Python. Com isso é possível criar painéis e relatórios interativos focados na persona para o qual ele foi concebido, livrando o usuário de ter de interagir com sistemas complexos de Dashboard, como o Kibana. 
 
@@ -16,55 +23,26 @@ O Relatório de Movimentação Processual está subdividido em 5 páginas no men
 
 ### Visão Geral
 
-Esta é a página inicial da aplicação em que é apresentado ao usuário o que é o Datajud e de onde vêm as informações dele. Em seguida o usuário já é apresentado
+Esta é a página inicial da aplicação em que é apresentado ao usuário o que é o Datajud e de onde vêm as informações dele. Em seguida o usuário já é apresentado a um pequeno filto, para que ele selecione os dados de qual de qual Justiça serão apresentados no decorrero do relatório. Abaixo deste filtro serão apresentadas KPIs e informações gerais, que apresentem a dimensão e volume de processos entre os órgãos
+
+### Metodologia
+### Visão Geral
+### Unidade de Origem
+### Movimentações 
+### Comparar
+### Destaques
 
 ## Rodando o app localmente
 
 O Movimenta Analytics foi criado utilizando Docker já pensando na melhor forma de integrá-lo à nuvem do CNJ
 
-First create a virtual environment with conda or venv inside a temp folder, then activate it.
+`$ docker build -t plotly:cnj .`
+`$ ./start_dev.sh`
 
-```
-virtualenv venv
+## Tecnologias utilizadas
 
-# Windows
-venv\Scripts\activate
-# Or Linux
-source venv/bin/activate
-
-```
-
-Clone the git repo, then install the requirements with pip
-
-```
-
-git clone https://github.com/plotly/dash-sample-apps
-cd dash-sample-apps/apps/dash-financial-report
-pip install -r requirements.txt
-
-```
-
-Run the app
-
-```
-
-python app.py
-
-```
-
-## About the app
-
-This is an interactive, multi-page report which displays a variety of tables, bullet points, and Plotly interactive plots in a report format. The app incorporates custom local and external CSS to display distinct pages for PDF print.
-
-## Built With
-
+- [Python]
+- [Pandas]
+- [R]
 - [Dash](https://dash.plot.ly/) - Main server and interactive components
 - [Plotly Python](https://plot.ly/python/) - Used to create the interactive plots
-
-The following are screenshots for the app in this repo:
-
-![animated](screenshots/dash-financial-report-demo.gif)
-
-![screenshot](screenshots/report-screenshot.png)
-
-![screenshot](screenshots/report-interactive.png)

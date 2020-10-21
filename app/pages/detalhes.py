@@ -59,7 +59,7 @@ def create_layout(app):
                                             dcc.Dropdown(
                                                 id="filters-from",
                                                 options=[{'label': i, 'value': i} for i in np.sort(df_dados['Movimento 1'].unique())],
-                                                placeholder="Filtre pelo movimento",
+                                                placeholder="Filtro pelo movimento 1",
                                                 value='None',
                                             ),
                                         ],
@@ -70,7 +70,7 @@ def create_layout(app):
                                             dcc.Dropdown(
                                                 id="filters-to",
                                                 options=[{'label': i, 'value': i} for i in np.sort(df_dados['Movimento Subsequente'].unique())],
-                                                placeholder="Filtre pelo movimento subsequente",
+                                                placeholder="Filtro pelo movimento subsequente",
                                                 value='None',
                                             ),
                                         ],

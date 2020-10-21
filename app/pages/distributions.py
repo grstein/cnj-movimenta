@@ -63,7 +63,7 @@ def create_layout(app):
                             dcc.Dropdown(
                                 id="filters-select",
                                 options=[{'label': j, 'value': i} for (i,j) in df_dados[['codOrgao','Serventia']].drop_duplicates().values],
-                                value='5760',
+                                value='5766',
                                 className="six columns"
                             ),
                         ],
