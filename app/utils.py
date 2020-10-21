@@ -55,11 +55,6 @@ def get_menu():
                 href="/movimenta/overview",
                 className="tab first",
             ),
-            #dcc.Link(
-            #    "Metodologia",
-            #    href="/movimenta/price-performance",
-            #    className="tab",
-            #),
             dcc.Link(
                 "Minha Vara",
                 href="/movimenta/minha-vara",
@@ -75,7 +70,7 @@ def get_menu():
             ),
             dcc.Link(
                 "Destaques",
-                href="/movimenta/news-and-reviews",
+                href="/movimenta/destaques",
                 className="tab",
             ),
         ],

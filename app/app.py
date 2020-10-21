@@ -16,7 +16,7 @@ from pages import (
     minhaVara,
     detalhes,
     distributions,
-    newsReviews,
+    destaques,
 )
 
 # obter diretório relativo de dados
@@ -79,8 +79,8 @@ def display_page(pathname):
         return detalhes.create_layout(app)
     elif pathname == "/movimenta/distributions":
         return distributions.create_layout(app)
-    elif pathname == "/movimenta/news-and-reviews":
-        return newsReviews.create_layout(app)
+    elif pathname == "/movimenta/destaques":
+        return destaques.create_layout(app)
     elif pathname == "/movimenta/full-view":
         return (
             overview.create_layout(app),
@@ -88,7 +88,7 @@ def display_page(pathname):
             minhaVara.create_layout(app),
             detalhes.create_layout(app),
             distributions.create_layout(app),
-            newsReviews.create_layout(app),
+            destaques.create_layout(app),
         )
     else:
         return overview.create_layout(app)

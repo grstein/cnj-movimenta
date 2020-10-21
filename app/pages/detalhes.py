@@ -36,6 +36,16 @@ def create_layout(app):
                             html.Div(
                                 [
                                     html.H6(["Órgão Julgador"], className="subtitle padded"),
+                                    html.P(),
+                                    html.P(['Esta página foi criada para que o usuário possa selecionar um Órgão Julgador específico\
+                                    e visualizar a métrica específicas dele. O objetivo é que o usuário que conheça mais da realidade\
+                                    específica daquela unidade compreenda de forma geral o padrão de movimentação dos processos.']),
+                                    html.P(['O filtro foi criado para que o usuário explore dados de outras serventias, com o objetivo principal\
+                                    de que ele encontre padrões de movimentação mais eficiêntes que em sua própria Vara e busque \
+                                    informações com estes órgãos, a fim de incorporar as mesmas práticas em seu dia a dia.']),
+                                    html.P(['Logo abaixo encontra-se um filtro do tipo "De -> Para" que foi criado com o intúito de facilitar a análise\
+                                    das movimentações. Com ele é possível selecionar todos os pares de movimentação em que o Movimento 1 seja, por exemplo, "Petição" \
+                                    e verificar quais seriam os Movimentos Subsequentes e suas estatísticas.']),
                                     dcc.Dropdown(
                                         id="filters-select",
                                         options=[{'label': i, 'value': i} for i in df_dados['codOrgao'].unique()],
@@ -78,7 +88,12 @@ def create_layout(app):
                         [
                             html.Div(
                                 [
-                                    html.H6(["Heatmap"], className="subtitle"),
+                                    html.H6(["Árvore de movimentos"], className="subtitle"),
+                                    html.P(),
+                                    html.P(['Este gráfico apresenta as informações de movimentação dos processos em forma de árvore\
+                                    onde cada cor e, portanto, os retângulos mais externos, representam o Movimento 1 e dentro destes, os\
+                                    retângulos representam o Movimento Subsequente. Experimente clicar neles, a árvore irá se ajustar à\
+                                    visualização do movimento desejado.']),
                                     dcc.Graph(
                                         id='square-map'
                                     ),
