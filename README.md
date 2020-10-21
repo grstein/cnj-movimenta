@@ -41,7 +41,7 @@ Esta é a página inicial da aplicação em que é apresentado ao usuário o que
 O Movimenta Analytics foi criado utilizando Docker já pensando na melhor forma de integrá-lo à nuvem do CNJ
 
 `$ docker build -t plotly:cnj .`
-`$ ./start_dev.sh`
+`$ docker run -v $(pwd)/app:/app  --restart always -p 80:8050 plotly:cnj`
 
 ## Tecnologias utilizadas
 
