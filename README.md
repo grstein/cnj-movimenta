@@ -5,8 +5,7 @@ O Movimenta Analytics permite que os tribunais e seus órgãos avaliem o comport
 # Entregas:
 
 - [Demo Live](http://192.34.57.12/movimenta/overview)
-- [Video]()
--
+- [Video](https://www.youtube.com/watch?v=nD_MqDA9E-Q)
 
 
 ## Descrição das tecnologias
@@ -32,7 +31,7 @@ O Relatório de Movimentação Processual está subdividido em 5 páginas no men
 
 ### Visão Geral
 
-Esta é a página inicial da aplicação em que é apresentado ao usuário o que é o Datajud e de onde vêm as informações dele. Em seguida o usuário já é apresentado a um pequeno filtro, para que ele selecione os dados de qual Justiça serão apresentados no decorrer do relatório. Abaixo deste filtro serão apresentadas KPIs e informações gerais, que apresentem a dimensão e volume de processos entre os órgãos
+- Esta é a página inicial da aplicação em que é apresentado ao usuário o que é o Datajud e de onde vêm as informações dele. Em seguida o usuário já é apresentado a um pequeno filtro, para que ele selecione os dados de qual Justiça serão apresentados no decorrer do relatório. Abaixo deste filtro serão apresentadas KPIs e informações gerais, que apresentem a dimensão e volume de processos entre os órgãos
 
 ### Metodologia
 - Apresenta a explicação sobre as métricas utilizadas, bem como elas foram extraídas para facilitar o entendimento do relatório.
