@@ -1,56 +1,48 @@
-# Dash Financial Report
+# Entregas:
 
-This is a demo of the [Dash](https://plot.ly/products/dash/) interactive Python framework developed by [Plotly](https://plot.ly/).
+- [Demo Live](http://192.34.57.12/movimenta/overview)
+- [Video]()
+-
 
-Dash abstracts away all of the technologies and protocols required to build an interactive web-based application and is a simple and effective way to bind a user interface around your Python code. To learn more about Dash, take a look at our [documentation](https://dash.plot.ly). If you're interested in deploying this application, check out [Dash Deployment Server](https://dash.plot.ly/dash-deployment-server/) - Plotly's commercial offering for hosting and sharing Dash Apps on-premise or in the cloud.
 
-## Getting Started
+## Movimenta Analytics
 
-### Running the app locally
+Esta aplicação foi criada utilizando o framework interarivo do Python [Dash](https://plot.ly/products/dash/) desenvolvido pelo [Plotly](https://plot.ly/). Todas estas tecnologias são open-source e possibilitam o uso de bibliotecas que são o estado da arte na Ciência de Dados. O Dash abstrai toda a tecnologia e protocolos necessários para criar aplicações Web interativas e é uma forma simples e efetiva de apresentar as informações obtidas por meio do processamento com as bibliotecas do Python. Com isso é possível criar painéis e relatórios interativos focados na persona para o qual ele foi concebido, livrando o usuário de ter de interagir com sistemas complexos de Dashboard, como o Kibana. 
 
-First create a virtual environment with conda or venv inside a temp folder, then activate it.
+O Movimenta Analytics foi pensado de forma que ele possa ser facilmente integrado à tecnologia ElasticSearch, utilizada no sistema Datajud. Esta versão Demo utiliza porções de dados pré-processados, obtidos do Dataset fornecido no desafio. Os algoritmos aplicados nestes pré-processamentos estão documentados no diretório Notebooks, em arquivos do Jupyter Notebooks, que foram criados com objetivo de facilitar sua transcrição na linguagem de consulta do Elasticsearch. Esta implementação traria uma maior performance nas consultas e livraria o servidor do Movimenta Analytics para processar apenas a visualização dos dados, já que hoje ele realiza as tarefas de consulta e apresentação dos dados simultâneamente. 
 
-```
-virtualenv venv
+O Dash é uma biblioteca versátil que possibilita a criação de diversos tipos de Dashboards. Nossa equipe optou por utilizar uma interface que se parece com um relatório real, semelhante a um PDF ou mesmo um documento impresso, pensando nas personas indicadas no desafio. Esperamos que as pessoas com menor habilidade em operar o computador não se sintam intimidados por uma interface complexa. Utilizamos as técnicas de Design Thinking e Story Telling buscando inserir os elementos de texto, filtros e as informações dinâmnicas de forma gradual dentre as diferentes páginas da aplicação, tomando o cuidado em manter um contexto em cada uma e não sobrecarregar a tela.
 
-# Windows
-venv\Scripts\activate
-# Or Linux
-source venv/bin/activate
+## Aonde este relatório pode ser aplicado
 
-```
+Embora nossa equipe tenha focado no assunto código 1116 de Execução Fiscal, que representa o maior volume de processos em praticamente todos os Tribunais Estaduais, a Metodologia de análise do Tempo Médio entre os pares de Movimentação pode ser aplicada em qualquer Classe/Assunto de processo. Para ilustrar esta possibilidade, o relatório apresenta na primeira página um filtro do tipo `Radio Button` para seleção de qual Justiça o usuário pretende analisar. Neste demo este filtro estará travado em Justiça Estadual apenas por estarmos trabalhando com uma base de dados pré-processada.
 
-Clone the git repo, then install the requirements with pip
+## Como o app está dividido
 
-```
+O Relatório de Movimentação Processual está subdividido em 5 páginas no menu principal para as informações e 1 página acessada em um botão separado com a metodologia. Espera-se que o usuário siga a ordem das páginas apresentadas no menu principal. A seguir detalharemos cada página.
 
-git clone https://github.com/plotly/dash-sample-apps
-cd dash-sample-apps/apps/dash-financial-report
-pip install -r requirements.txt
+### Visão Geral
 
-```
+Esta é a página inicial da aplicação em que é apresentado ao usuário o que é o Datajud e de onde vêm as informações dele. Em seguida o usuário já é apresentado a um pequeno filto, para que ele selecione os dados de qual de qual Justiça serão apresentados no decorrero do relatório. Abaixo deste filtro serão apresentadas KPIs e informações gerais, que apresentem a dimensão e volume de processos entre os órgãos
 
-Run the app
+### Metodologia
+### Visão Geral
+### Unidade de Origem
+### Movimentações 
+### Comparar
+### Destaques
 
-```
+## Rodando o app localmente
 
-python app.py
+O Movimenta Analytics foi criado utilizando Docker já pensando na melhor forma de integrá-lo à nuvem do CNJ
 
-```
+`$ docker build -t plotly:cnj .`
+`$ ./start_dev.sh`
 
-## About the app
+## Tecnologias utilizadas
 
-This is an interactive, multi-page report which displays a variety of tables, bullet points, and Plotly interactive plots in a report format. The app incorporates custom local and external CSS to display distinct pages for PDF print.
-
-## Built With
-
+- [Python]
+- [Pandas]
+- [R]
 - [Dash](https://dash.plot.ly/) - Main server and interactive components
 - [Plotly Python](https://plot.ly/python/) - Used to create the interactive plots
-
-The following are screenshots for the app in this repo:
-
-![animated](screenshots/dash-financial-report-demo.gif)
-
-![screenshot](screenshots/report-screenshot.png)
-
-![screenshot](screenshots/report-interactive.png)
