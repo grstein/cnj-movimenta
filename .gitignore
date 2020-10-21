@@ -5,3 +5,4 @@ code
 base
 app/__pycache__
 app/pages/__pycache__
+app/data/movimentos.csv
