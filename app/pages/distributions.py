@@ -9,10 +9,12 @@ PATH = pathlib.Path(__file__).parent
 DATA_PATH = PATH.joinpath("../data").resolve()
 
 # lendo DataFrame pré-processado
-df_dados = pd.read_csv(DATA_PATH.joinpath("pares.csv"))
-df_dados = df_dados.dropna()
-df_dados = df_dados.drop('transicao_movimento',axis=1)
-df_dados.columns = ['Tribunal','codOrgao','Quantidade','Tempo mínimo','Tempo máximo','Tempo médio','C1','C2','Movimento 1', 'Movimento Subsequente']
+df_dados = pd.read_csv(DATA_PATH.joinpath("pares.csv")).dropna().drop('transicao_movimento',axis=1)
+# Obter dados das serventias
+mpm_serventias = pd.read_csv(DATA_PATH.joinpath("mpm_serventias.csv"), sep=";").set_index('SEQ_ORGAO')[['NOMEDAVARA']]
+df_dados = df_dados.merge(mpm_serventias,left_on="orgaoJulgador.codigoOrgao", right_index=True)
+df_dados.columns = ['Tribunal','codOrgao','Quantidade','Tempo mínimo','Tempo máximo','Tempo médio','C1','C2','Movimento 1', 'Movimento Subsequente','Serventia']
+
 
 df_dados = df_dados.astype({'C1': 'object'})
 df_dados = df_dados.astype({'C2': 'object'})
@@ -35,7 +37,10 @@ def create_layout(app):
                                     ),
                                     html.P(
                                         [
-                                            "Esta página foi criada para que dois órgãos julgadores possam ser comparados."
+                                            "Esta página deverá ser projetada para adicinar ao fluxo que o usuário já vinha a ideia da comparação entre as serventias.\
+                                            Ela já iniciará carregada com informações das duas últimas serventias escolhidas na página anterior e convidará\
+                                            o usuário a selecionar outras nos filtos. Os dados apresentados deverão adicionar um elemento de Gamefication, que\
+                                            gere um sentimento de competitividade e o induza a buscar como as outras serventias resolvem problemas que ele também tem."
                                         ],
                                         style={"color": "#7a7a7a"},
                                     ),
@@ -51,13 +56,13 @@ def create_layout(app):
                         [
                             dcc.Dropdown(
                                 id="filters-select",
-                                options=[{'label': i, 'value': i} for i in df_dados['codOrgao'].unique()],
+                                options=[{'label': j, 'value': i} for (i,j) in df_dados[['codOrgao','Serventia']].drop_duplicates().values],
                                 value='5760',
                                 className="six columns"
                             ),
                             dcc.Dropdown(
                                 id="filters-select",
-                                options=[{'label': i, 'value': i} for i in df_dados['codOrgao'].unique()],
+                                options=[{'label': j, 'value': i} for (i,j) in df_dados[['codOrgao','Serventia']].drop_duplicates().values],
                                 value='5760',
                                 className="six columns"
                             ),

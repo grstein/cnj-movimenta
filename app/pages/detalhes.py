@@ -14,10 +14,11 @@ PATH = pathlib.Path(__file__).parent
 DATA_PATH = PATH.joinpath("../data").resolve()
 
 # lendo DataFrame pré-processado
-df_dados = pd.read_csv(DATA_PATH.joinpath("pares.csv"))
-df_dados = df_dados.dropna()
-df_dados = df_dados.drop('transicao_movimento',axis=1)
-df_dados.columns = ['Tribunal','codOrgao','Quantidade','Tempo mínimo','Tempo máximo','Tempo médio','C1','C2','Movimento 1', 'Movimento Subsequente']
+df_dados = pd.read_csv(DATA_PATH.joinpath("pares.csv")).dropna().drop('transicao_movimento',axis=1)
+# Obter dados das serventias
+mpm_serventias = pd.read_csv(DATA_PATH.joinpath("mpm_serventias.csv"), sep=";").set_index('SEQ_ORGAO')[['NOMEDAVARA']]
+df_dados = df_dados.merge(mpm_serventias,left_on="orgaoJulgador.codigoOrgao", right_index=True)
+df_dados.columns = ['Tribunal','codOrgao','Quantidade','Tempo mínimo','Tempo máximo','Tempo médio','C1','C2','Movimento 1', 'Movimento Subsequente','Serventia']
 
 df_dados = df_dados.astype({'C1': 'object'})
 df_dados = df_dados.astype({'C2': 'object'})
@@ -48,7 +49,8 @@ def create_layout(app):
                                     e verificar quais seriam os Movimentos Subsequentes e suas estatísticas.']),
                                     dcc.Dropdown(
                                         id="filters-select",
-                                        options=[{'label': i, 'value': i} for i in df_dados['codOrgao'].unique()],
+                                        #options=[{'label': i, 'value': i} for i in df_dados['codOrgao'].unique()],
+                                        options=[{'label': j, 'value': i} for (i,j) in df_dados[['codOrgao','Serventia']].drop_duplicates().values],
                                         value='5760',
                                     ),
                                     #html.H6(["Filtro De -> Para"], className="subtitle padded"),
@@ -93,7 +95,7 @@ def create_layout(app):
                                     html.P(['Este gráfico apresenta as informações de movimentação dos processos em forma de árvore\
                                     onde cada cor e, portanto, os retângulos mais externos, representam o Movimento 1 e dentro destes, os\
                                     retângulos representam o Movimento Subsequente. Experimente clicar neles, a árvore irá se ajustar à\
-                                    visualização do movimento desejado.']),
+                                    visualização do movimento desejado. Este gráfico também obedece o filtro da serventia lá em cima e se atualiza junto com a tabela.']),
                                     dcc.Graph(
                                         id='square-map'
                                     ),

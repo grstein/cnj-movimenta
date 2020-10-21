@@ -13,6 +13,7 @@ DATA_PATH = PATH.joinpath("../data").resolve()
 # Carrega tabelas
 sgt_classes = pd.read_csv(DATA_PATH.joinpath('sgt_classes.csv'), sep=';')
 sgt_assuntos = pd.read_csv(DATA_PATH.joinpath('sgt_assuntos.csv'), sep=';')
+sgt_assuntos = pd.read_csv(DATA_PATH.joinpath('sgt_assuntos.csv'), sep=';')
 
 def create_layout(app):
     return html.Div(
@@ -29,14 +30,16 @@ def create_layout(app):
                                     html.H6(["Selecione as Classes Processuais"], className="subtitle padded"),
                                     dcc.Dropdown(
                                         id="filter-classes",
-                                        options=[{'label': i, 'value': i} for i in sgt_classes['codigo'].unique()],
+                                        options=[{'label': j, 'value': i} for (i,j) in sgt_classes[['codigo','descricao']].drop_duplicates().values],
+                                        #options=[{'label': i, 'value': i} for i in sgt_classes['codigo'].unique()],
                                         value='5760',
                                         multi=True,
                                     ),
                                     html.H6(["Selecione os Assuntos"], className="subtitle padded"),
                                     dcc.Dropdown(
                                         id="filter-assuntos",
-                                        options=[{'label': i, 'value': i} for i in sgt_assuntos['codigo'].unique()],
+                                        options=[{'label': j, 'value': i} for (i,j) in sgt_assuntos[['codigo','descricao']].drop_duplicates().values],
+                                        #options=[{'label': i, 'value': i} for i in sgt_assuntos['codigo'].unique()],
                                         value='5760',
                                         multi=True,
                                     ),
