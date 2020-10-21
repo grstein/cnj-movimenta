@@ -65,7 +65,8 @@ def create_layout(app):
                                     ),
                                     html.Img(
                                         src=app.get_asset_url("linha_proc.png"),
-                                        className="linha_proc",
+                                        style={'height':'100%', 'width':'100%'},
+                                        className="linha_proc"
                                     ),
                                 ],
                                 className="twelve columns",
