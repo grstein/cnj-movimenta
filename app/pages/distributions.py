@@ -37,7 +37,6 @@ def create_layout(app):
                                     ),
                                     html.P(
                                         ["Esta página deverá ser projetada para adicionar ao fluxo que o usuário já possui a ideia da comparação entre as unidades de origem. Ela já iniciará carregada com informações das duas últimas serventias escolhidas na página anterior e convidará o usuário a selecionar outras nos filtros. Os dados apresentados deverão adicionar um elemento de Gamefication, não só para proporcionar um salutar sentimento de competitividade (de modo a induzir a busca pela melhor solução), como também e principalmente para proporcionar ao CNJ uma visão macro e micro das dificuldades e gargalos específicos daquela unidade de origem."],
-                                        style={"color": "#7a7a7a"},
                                     ),
                                     html.Br()
                                 ],

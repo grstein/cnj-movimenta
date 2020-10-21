@@ -37,6 +37,10 @@ def create_layout(app):
                         [
                             html.Div(
                                 [
+                                    html.P(
+                                        ["Esta página deverá apresentar informações específicas de uma Unidade como métricas e KPIs. Conforme ele seleciona os filtros, os graficos abaixo refletem a seleção."],
+                                    ),
+                                    html.Br(),
                                     html.H6(["Selecione a Unidade de Origem"], className="subtitle padded"),
                                     dcc.Dropdown(
                                         id="filters-select",
@@ -59,6 +63,13 @@ def create_layout(app):
                                         #options=[{'label': i, 'value': i} for i in sgt_assuntos['codigo'].unique()],
                                         value='5760',
                                         multi=True,
+                                    ),
+                                    html.Br(),
+                                    html.Br(),
+                                    html.Img(
+                                        src=app.get_asset_url("dashboard.png"),
+                                        style={'height':'100%', 'width':'100%'},
+                                        className="linha_proc"
                                     ),
                                 ],
                                 className="twelve columns",
