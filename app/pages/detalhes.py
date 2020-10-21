@@ -38,15 +38,9 @@ def create_layout(app):
                                 [
                                     html.H6(["Órgão Julgador"], className="subtitle padded"),
                                     html.P(),
-                                    html.P(['Esta página foi criada para que o usuário possa selecionar um Órgão Julgador específico\
-                                    e visualizar a métrica específicas dele. O objetivo é que o usuário que conheça mais da realidade\
-                                    específica daquela unidade compreenda de forma geral o padrão de movimentação dos processos.']),
-                                    html.P(['O filtro foi criado para que o usuário explore dados de outras serventias, com o objetivo principal\
-                                    de que ele encontre padrões de movimentação mais eficiêntes que em sua própria Vara e busque \
-                                    informações com estes órgãos, a fim de incorporar as mesmas práticas em seu dia a dia.']),
-                                    html.P(['Logo abaixo encontra-se um filtro do tipo "De -> Para" que foi criado com o intúito de facilitar a análise\
-                                    das movimentações. Com ele é possível selecionar todos os pares de movimentação em que o Movimento 1 seja, por exemplo, "Petição" \
-                                    e verificar quais seriam os Movimentos Subsequentes e suas estatísticas.']),
+                                    html.P(['Esta página foi criada para que o usuário possa selecionar um Órgão Julgador específico e visualizar suas métricas específicas. O objetivo é que o usuário que conheça mais da realidade específica daquela unidade de origem e compreenda, de forma geral, o padrão de movimentação dos processos.']),
+                                    html.P(['O filtro foi criado para que o usuário explore dados de outras unidades de origem, com o objetivo principal de que, encontrados padrões de movimentação mais eficientes, possa buscar informações das soluções ali encontradas, a fim de que possa, com as adaptações necessárias, incorporar as mesmas práticas em seu dia a dia.']),
+                                    html.P(['Logo abaixo encontra-se um filtro do tipo "De -> Para" que foi criado com o intuito de facilitar a análise das movimentações. Com ele é possível selecionar todos os pares de movimentação em que o Movimento 1 seja, por exemplo, "Petição" e verificar quais seriam os Movimentos Subsequentes e suas estatísticas.']),
                                     dcc.Dropdown(
                                         id="filters-select",
                                         #options=[{'label': i, 'value': i} for i in df_dados['codOrgao'].unique()],
@@ -92,10 +86,7 @@ def create_layout(app):
                                 [
                                     html.H6(["Árvore de movimentos"], className="subtitle"),
                                     html.P(),
-                                    html.P(['Este gráfico apresenta as informações de movimentação dos processos em forma de árvore\
-                                    onde cada cor e, portanto, os retângulos mais externos, representam o Movimento 1 e dentro destes, os\
-                                    retângulos representam o Movimento Subsequente. Experimente clicar neles, a árvore irá se ajustar à\
-                                    visualização do movimento desejado. Este gráfico também obedece o filtro da serventia lá em cima e se atualiza junto com a tabela.']),
+                                    html.P(['Este gráfico apresenta as informações de movimentação dos processos em forma de árvore. onde cada cor (e, portanto, os retângulos mais externos) representam o “Movimento 1” e dentro destes, os retângulos representam o “Movimento Subsequente”. Experimente clicar neles: a árvore irá se ajustar à visualização do movimento desejado. Este gráfico também obedece ao filtro da unidade de origem (acima) e se atualiza junto com a tabela!']),
                                     dcc.Graph(
                                         id='square-map'
                                     ),

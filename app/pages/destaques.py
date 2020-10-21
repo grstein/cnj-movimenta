@@ -19,16 +19,16 @@ def create_layout(app):
                                     html.Div(
                                         [
                                             html.P(
-                                                "15/10/20    CNJ inalgura o Sistema Movimenta que auxiliará os técnicos judiciários a entender melhor as movimentações"
+                                                "15/10/20 CNJ inaugura o “Sistema Movimenta” que auxiliará não só aos operadores do direito a análise, de modo simplificado, dos gargalos das movimentações, como também ao próprio CNJ a direcionar seus esforços de maneira eficiente e direta."
                                             ),
                                             html.P(
-                                                "21/10/20    Nova jurisprudência visa simplificar processos de Execução Fiscal"
+                                                "21/10/20 Nova jurisprudência visa simplificar processos de Execução Fiscal."
                                             ),
                                             html.P(
-                                                "23/10/20    Resolução 345/2020 do CNJ que regulamenta o Juízo 100\% \digital"
+                                                "23/10/20 Resolução 345/2020 do CNJ regulamenta o “Juízo 100% digital” – “Sistema Movimenta” será utilizado como indicador de produtividade e celeridade previsto no artigo 7º."
                                             ),
                                             html.P(
-                                                "29/10/20    Equipe 36 ganha competição do CNJ Inova com relatório de movimentação processual interativo"
+                                                "29/10/20 Equipe 36 ganha competição do “CNJ Inova” com relatório de movimentação processual interativo."
                                             ),  
                                         ],
                                         style={"color": "#7a7a7a"},
@@ -42,15 +42,15 @@ def create_layout(app):
                                     html.Div(
                                         [
                                             html.P(
-                                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                                "Visando a concretização do princípio constitucional do amplo e célere acesso à Justiça, bem como promover o incremento da celeridade e da eficiência da prestação jurisdicional o Conselho Nacional de Justiça busca a modernização de todo o sistema judiciário, principalmente buscando a utilização de ferramentas computacionais. Assim é que diversas são as diretrizes e projetos instituídas, tais como o Processo Judicial Eletrônico (PJe)."
                                             ),
                                             html.Br([]),
                                             html.P(
-                                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                                "Importa considerar ainda, dentre as atribuições do CNJ (previstas no art. 103-B, §4º da Constituição Federal) o controle de atuação administração e financeira e a coordenação do planejamento estratégico do Poder Judiciário, inclusive na área de tecnologia da informação, tornam-se como pilares para o incremento do novo projeto nominado 'Juízo 100% Digital'."
                                             ),
                                             html.Br([]),
                                             html.P(
-                                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                                "Assim, o “MOVIMENTA ANALYTICS” se caracteriza como ferramenta hábil, estratégia inteligência de controle interno de processos para que se possa, de modo simples, célere e eficaz analisar e alertar sobre possíveis gargalos no tempo de tramitação processual.  Permite também a construção de um diagnóstico para oportunizar ao CNJ a implantação das imprescindíveis medidas assertivas que permitirão a eficiência dos atos. Pode-se mesmo afirmar que será uma ferramenta de grande valia para o “compliance digital” da administração pública."
                                             ),
                                         ],
                                         style={"color": "#7a7a7a"},
