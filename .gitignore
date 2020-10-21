@@ -1,0 +1,7 @@
+*.ipynb
+.ipynb_checkpoints
+kubernetes
+code
+base
+app/__pycache__
+app/pages/__pycache__
