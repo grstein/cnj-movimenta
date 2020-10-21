@@ -1,3 +1,7 @@
+# Movimenta Analytics
+
+O Movimenta Analytics permite que os tribunais e seus órgãos avaliem o comportamento das movimentações processuais, permitindo o diagnóstico para fundamentar decisões em favor da melhoria do desempenho judicial. A aplicação foca na sistematização e organização das movimentações processuais, por meio da análise dos pares de transição desses movimentos. 
+
 # Entregas:
 
 - [Demo Live](http://192.34.57.12/movimenta/overview)
@@ -5,13 +9,13 @@
 -
 
 
-## Movimenta Analytics
+## Descrição das tecnologias
 
 Esta aplicação foi criada utilizando o framework interarivo do Python [Dash](https://plot.ly/products/dash/) desenvolvido pelo [Plotly](https://plot.ly/). Todas estas tecnologias são open-source e possibilitam o uso de bibliotecas que são o estado da arte na Ciência de Dados. O Dash abstrai toda a tecnologia e protocolos necessários para criar aplicações Web interativas e é uma forma simples e efetiva de apresentar as informações obtidas por meio do processamento com as bibliotecas do Python. Com isso é possível criar painéis e relatórios interativos focados na persona para o qual ele foi concebido, livrando o usuário de ter de interagir com sistemas complexos de Dashboard, como o Kibana. 
 
-O Movimenta Analytics foi pensado de forma que ele possa ser facilmente integrado à tecnologia ElasticSearch, utilizada no sistema Datajud. Esta versão Demo utiliza porções de dados pré-processados, obtidos do Dataset fornecido no desafio. Os algoritmos aplicados nestes pré-processamentos estão documentados no diretório Notebooks, em arquivos do Jupyter Notebooks, que foram criados com objetivo de facilitar sua transcrição na linguagem de consulta do Elasticsearch. Esta implementação traria uma maior performance nas consultas e livraria o servidor do Movimenta Analytics para processar apenas a visualização dos dados, já que hoje ele realiza as tarefas de consulta e apresentação dos dados simultâneamente. 
+O Movimenta Analytics foi pensado de forma que ele possa ser facilmente integrado à tecnologia ElasticSearch, utilizada no sistema Datajud. Esta versão Demo utiliza porções de dados pré-processados, obtidos do Dataset fornecido no desafio. Os algoritmos aplicados nestes pré-processamentos estão documentados no diretório Notebooks, em arquivos do Jupyter Notebooks, que foram criados com objetivo de facilitar sua transcrição na linguagem de consulta do Elasticsearch. Esta implementação traria uma maior performance nas consultas e dispensaria o servidor do Movimenta Analytics para que se dedique a processar apenas a visualização dos dados, já que hoje ele realiza as tarefas de consulta e apresentação dos dados simultaneamente. 
 
-O Dash é uma biblioteca versátil que possibilita a criação de diversos tipos de Dashboards. Nossa equipe optou por utilizar uma interface que se parece com um relatório real, semelhante a um PDF ou mesmo um documento impresso, pensando nas personas indicadas no desafio. Esperamos que as pessoas com menor habilidade em operar o computador não se sintam intimidados por uma interface complexa. Utilizamos as técnicas de Design Thinking e Story Telling buscando inserir os elementos de texto, filtros e as informações dinâmnicas de forma gradual dentre as diferentes páginas da aplicação, tomando o cuidado em manter um contexto em cada uma e não sobrecarregar a tela.
+O Dash é uma biblioteca versátil que possibilita a criação de diversos tipos de Dashboards. Nossa equipe optou por utilizar uma interface que se parece com um relatório real, semelhante a um PDF ou mesmo um documento impresso, pensando nas personas indicadas no desafio. Esperamos que as pessoas com menor habilidade em operar o computador não se sintam intimidados por uma interface complexa. Utilizamos as técnicas de Design Thinking e Storytelling buscando inserir os elementos de texto, filtros e as informações dinâmicas de forma gradual dentre as diferentes páginas da aplicação, tomando o cuidado em manter um contexto em cada uma e não sobrecarregar a tela.
 
 ## Aonde este relatório pode ser aplicado
 
@@ -23,7 +27,7 @@ O Relatório de Movimentação Processual está subdividido em 5 páginas no men
 
 ### Visão Geral
 
-Esta é a página inicial da aplicação em que é apresentado ao usuário o que é o Datajud e de onde vêm as informações dele. Em seguida o usuário já é apresentado a um pequeno filto, para que ele selecione os dados de qual de qual Justiça serão apresentados no decorrero do relatório. Abaixo deste filtro serão apresentadas KPIs e informações gerais, que apresentem a dimensão e volume de processos entre os órgãos
+Esta é a página inicial da aplicação em que é apresentado ao usuário o que é o Datajud e de onde vêm as informações dele. Em seguida o usuário já é apresentado a um pequeno filtro, para que ele selecione os dados de qual Justiça serão apresentados no decorrer do relatório. Abaixo deste filtro serão apresentadas KPIs e informações gerais, que apresentem a dimensão e volume de processos entre os órgãos
 
 ### Metodologia
 ### Visão Geral
